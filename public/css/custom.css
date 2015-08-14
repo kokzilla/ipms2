@@ -1,0 +1,24 @@
+/*# Custom by Chartwut */
+.row{
+	margin-bottom: 10px !important;
+}
+.form-group{
+	 margin-right: 10px !important;
+}
+.fullname{
+	maxlength : 200px !important;
+	width : 200px !important;
+}
+.age{
+	width : 50px !important;
+}
+.num{
+	width : 50px !important;
+}
+.fulladdress{
+	maxlength : 500px !important;
+	width : 500px !important;
+}
+body{
+	font-family:Angsana News;
+}
