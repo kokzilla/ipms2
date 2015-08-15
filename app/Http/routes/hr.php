@@ -1,16 +1,6 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/portal', function () {
-    return view('portal');
-});
-
-Route::get('/hr', function () {
-    return view('hr.portal');
-});
+// -- route for Jobapps
 
 Route::get('/pdf', 'PdfController@invoice');
 

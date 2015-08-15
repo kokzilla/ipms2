@@ -12,21 +12,6 @@ Route::get('/hr', function () {
     return view('hr.portal');
 });
 
-Route::get('/pdf', 'PdfController@invoice');
-
-// Provide controller methods with object instead of ID
-Route::model('jobapps', 'Jobapp');
-Route::model('positions', 'Position');
-Route::model('marriages', 'Marriage');
-
-Route::get('jobapps/{jobapps}/pdf',array(
-	'as' =>'jobapps.pdf'
-	,'uses' => 'JobappsController@pdf'));
-Route::resource('jobapps','JobappsController');
-Route::resource('positions','PositionsController');
-Route::resource('marriages','MarriageController');
-
-
-Route::bind('jobapps', function($value, $route) {
-	return App\Models\Hr\Jobapp::whereJob_app_no($value)->first();
-});
+// Include HR routes files
+require __DIR__.'/routes/hr.php';
+//- See more at: http://laravelsnippets.com/snippets/split-routes-into-different-files#sthash.xTsA2Ah3.dpuf
