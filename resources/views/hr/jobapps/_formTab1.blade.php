@@ -1,5 +1,18 @@
 <!-- part 1  -->
-<div class="panel panel-primary" id="personal-data">
+
+<script type="text/javascript">
+    $(document).ready(function() {
+$('#sameAddress').click(function () {
+       if (this.checked) {
+        $('#address2').val($('#address1').val());
+        $('#province_id2').val($('#province_id').val());
+        $('#tel2').val($('#tel1').val());
+    }        
+});
+    });
+</script>
+
+<div class="panel panel-green" id="personal-data">
     <div class="panel-heading">                
         ส่วนที่ 1  ข้อมูลส่วนตัว                  
     </div>
@@ -138,8 +151,9 @@
             <div class="col-md-12">
                 <div class="form-group">
 
-                    {!! Form::checkbox('sameaddress','1',true) !!}
-                    {!! Form::label('sameaddress', 'ที่อยู่ปัจจุบันตรงกับที่อยู่ในบัตรประชาชน') !!}
+                    {!! Form::checkbox('sameAddress','1',true,array('class' => 'form-control','id'=>'sameAddress')) !!}
+                    {!! Form::label('sameAddress', 'ที่อยู่ปัจจุบันตรงกับที่อยู่ในบัตรประชาชน') !!}
+                    <div id="txtAge" style="display:none">Age is something</div>​
 
                 </div>
 
@@ -302,7 +316,7 @@
     </div>			
 </div>
 <!-- part 2  -->
-<div class="panel panel-primary" id="family-data">
+<div class="panel panel-green" id="family-data">
     <div class="panel-heading">
 
         ส่วนที่ 2 ข้อมูลครอบครัว   
@@ -426,7 +440,7 @@
     </div>
 </div>
 <!-- part 3-->
-<div class="panel panel-primary" id="edu-data">
+<div class="panel panel-green" id="edu-data">
     <div class="panel-heading">
 
         ส่วนที่ 3  การศึกษา  

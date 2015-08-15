@@ -8,7 +8,7 @@
     <div class="col-lg-12">
         <div class="panel-body">
             <!-- Nav tabs -->
-            <ul class="nav nav-pills">
+            <ul class="nav nav-pills green">
                 <li class="active"><a href="#profile-pills" data-toggle="tab">ข้อมูลหลัก</a>
                 </li>
                 <li><a href="#option-pills" data-toggle="tab">ข้อมูลเพิ่มเติม</a>
@@ -30,8 +30,8 @@
             </div>
         </div>
         <div class="form-group">
-            {!! Form::submit($submit_text, ['class'=>'btn btn-primary ']) !!}
-            <a href="/jobapps" type="button" class="btn btn-primary">ยกเลิก</a>
+            {!! Form::submit($submit_text, ['class'=>'btn btn-success ']) !!}
+            <a href="/jobapps" type="button" class="btn btn-success"> ยกเลิก</a>
         </div>
     </div>
     <script type="text/javascript">

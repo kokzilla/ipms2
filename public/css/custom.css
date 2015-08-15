@@ -22,3 +22,8 @@
 body{
 	font-family:Angsana News;
 }
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+    color: #FFF;
+    background-color: #5CB85C;
+}

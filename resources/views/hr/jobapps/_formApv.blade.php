@@ -1,4 +1,4 @@
-<div class="panel panel-primary" id="doc-data">
+<div class="panel panel-green" id="doc-data">
     <div class="panel-heading">
         การพิจารณาว่าจ้าง
     </div>

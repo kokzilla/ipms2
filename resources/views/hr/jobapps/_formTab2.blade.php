@@ -1,5 +1,5 @@
 <!-- part 4  -->
-<div class="panel panel-primary" id="job-history-data">
+<div class="panel panel-green" id="job-history-data">
     <div class="panel-heading">
         ส่วนที่ 4   ประวัติการทำงาน
     </div>
@@ -40,7 +40,7 @@
     </div>
 </div>
 <!-- part 5  -->
-<div class="panel panel-primary" id="skill-data">
+<div class="panel panel-green" id="skill-data">
     <div class="panel-heading">
         ส่วนที่ 5 ความสามารถพิเศษ   
     </div>
@@ -164,7 +164,7 @@
     </div>
 </div>
 <!-- part 6  -->
-<div class="panel panel-primary" id="ref-person-data">
+<div class="panel panel-green" id="ref-person-data">
     <div class="panel-heading">
         ส่วนที่ 6 บุคคลอ้างอิง   
     </div>
@@ -284,7 +284,7 @@
     </div>
 </div>
 <!-- เอกสารประกอบการสมัคร -->
-<div class="panel panel-primary" id="doc-data">
+<div class="panel panel-green" id="doc-data">
     <div class="panel-heading">
         เอกสารประกอบการสมัครงาน
     </div>

@@ -12,7 +12,7 @@
 
         <title>PO-Oil Information System</title>
         {!! HTML::style('/css/app.css') !!}
-        {!! HTML::style('/css/custom.css') !!}
+        
 
         <!-- Bootstrap Core CSS -->
         {!! HTML::style('/bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
@@ -34,7 +34,9 @@
 
         <!-- calendar -->
         <link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-
+        
+        {!! HTML::style('/css/custom.css') !!}
+        
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
