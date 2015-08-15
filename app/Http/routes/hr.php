@@ -12,7 +12,7 @@ Route::model('marriages', 'Marriage');
 Route::get('jobapps/{jobapps}/pdf',array(
 	'as' =>'jobapps.pdf'
 	,'uses' => 'JobappsController@pdf'));
-Route::resource('jobapps','JobappsController');
+Route::resource('jobapps','Hr\JobappsController');
 Route::resource('positions','PositionsController');
 Route::resource('marriages','MarriageController');
 
