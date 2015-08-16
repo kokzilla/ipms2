@@ -11,10 +11,15 @@ Route::model('marriages', 'Marriage');
 
 Route::get('jobapps/{jobapps}/pdf',array(
 	'as' =>'jobapps.pdf'
-	,'uses' => 'JobappsController@pdf'));
+	,'uses' => 'Hr\JobappsController@pdf'));
+
+Route::get('/genpass','Hr\EmployeeController@generatePassword');
+
+
 Route::resource('jobapps','Hr\JobappsController');
-Route::resource('positions','PositionsController');
-Route::resource('marriages','MarriageController');
+Route::resource('positions','Hr\PositionsController');
+Route::resource('marriages','Hr\MarriageController');
+Route::resource('employees','Hr\EmployeeController');
 
 
 Route::bind('jobapps', function($value, $route) {

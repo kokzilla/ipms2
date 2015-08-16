@@ -4,14 +4,13 @@ namespace App\Http\Controllers\Hr;
 
 use Illuminate\Http\Request;
 
-use Input;
-use Redirect;
-
-use App\Models\Hr\Position;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Hr\Employee;
 
-class PositionsController extends Controller
+use Illuminate\Support\Facades\Hash;
+
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -87,5 +86,17 @@ class PositionsController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    // -- generate password for all user
+    public function generatePassword(){
+        $employees = Employee::all();
+        
+        foreach ($employees as $employee){
+            $employee->password = Hash::make($employee->emp_id);
+            $employee->save();
+        }
+        
+        return view('portal');
     }
 }
