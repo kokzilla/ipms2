@@ -47,9 +47,9 @@
 
             </td>
             <td class="text-center" >
-                {!! link_to_route('jobapps.edit', 'แก้ไข', array($jobapp->job_app_no), array('class' => 'btn btn-warning  btn-xs')) !!}
+                {!! link_to_route('hr.jobapps.edit', 'แก้ไข', array($jobapp->job_app_no), array('class' => 'btn btn-warning  btn-xs')) !!}
 
-                {!! link_to_route('jobapps.pdf', 'พิมพ์',['job_app_no'=>$jobapp->job_app_no] , array('class' => 'btn btn-info  btn-xs'))!!}
+                {!! link_to_route('hr.jobapps.pdf', 'พิมพ์',['job_app_no'=>$jobapp->job_app_no] , array('class' => 'btn btn-info  btn-xs'))!!}
 
             </td>
         </tr>

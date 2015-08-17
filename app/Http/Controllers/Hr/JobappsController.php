@@ -50,6 +50,10 @@ class JobappsController extends Controller {
     private $education;
     private $department;
 
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -59,7 +63,7 @@ class JobappsController extends Controller {
         Date::setLocale('th');
         $user = Auth::user();
         $jobapps = Jobapp::all();
-        return view('hr.jobapps.index', compact('jobapps','user'));
+        return view('hr.jobapps.index', compact('jobapps', 'user'));
     }
 
     /**
@@ -81,7 +85,7 @@ class JobappsController extends Controller {
 
         //-- default personal file 
         $personalImagefile = $this->default_personal_file;
-        
+
         return view('hr.jobapps.create', compact('positions', 'marriages', 'prefix', 'race', 'nation', 'religion', 'province', 'education', 'department', 'personalImagefile'));
     }
 
@@ -142,9 +146,9 @@ class JobappsController extends Controller {
         }
 
         // -- defaul_jobapp_upload_path
-        $upload_jobapp_files =  '/uploadfiles/jobapp/files/';
+        $upload_jobapp_files = '/uploadfiles/jobapp/files/';
         $upload_jobapp_images = '/uploadfiles/jobapp/images/';
-        return view('hr.jobapps.edit', compact('jobapp', 'positions', 'marriages', 'prefix', 'race', 'nation', 'religion', 'province', 'education', 'department', 'personalImagefile','upload_jobapp_files','upload_jobapp_images'));
+        return view('hr.jobapps.edit', compact('jobapp', 'positions', 'marriages', 'prefix', 'race', 'nation', 'religion', 'province', 'education', 'department', 'personalImagefile', 'upload_jobapp_files', 'upload_jobapp_images'));
     }
 
     /**

@@ -19,10 +19,10 @@
                 <a href="#"><i class="fa fa-user-plus fa-fw"></i> สมัครงาน<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="/jobapps/create"><i class="fa fa-file-o fa-fw"></i> สมัครใหม่</a>
+                        <a href="/hr/jobapps/create"><i class="fa fa-file-o fa-fw"></i> สมัครใหม่</a>
                     </li>
                     <li>
-                        <a href="/jobapps"><i class="fa fa-list fa-fw"></i> แสดงผู้สมัคร</a>
+                        <a href="/hr/jobapps"><i class="fa fa-list fa-fw"></i> แสดงผู้สมัคร</a>
                     </li>
 
                 </ul>

@@ -5,14 +5,14 @@ Route::get('/', function () {
     //return view('welcome');
 });
 
-Route::get('/portal', function () {	
+Route::get('/portal', ['middleware' => 'auth',function () {	
     return view('portal',compact('user'));
-});
+}]);
 
-Route::get('/home', function () {
+Route::get('/home', ['middleware' => 'auth',function () {
 	$user = Auth::user();
-    return view('portal',compact('user'));
-});
+    return view('portal', compact('user'));
+}]);
 
 Route::get('/hr', function () {
     return view('hr.portal');

@@ -12,6 +12,8 @@ use Auth;
 
 
 class AuthController extends Controller {
+    
+    protected $redirectPath = '/portal';
     /*
       |--------------------------------------------------------------------------
       | Registration & Login Controller
@@ -93,10 +95,10 @@ use AuthenticatesAndRegistersUsers,
         //if (Auth::attempt(['email' => $email, 'password' => $password])) {
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended('home');
+            return redirect()->intended('portal');
         } else {
             return redirect()->intended('/')->withErrors([
-                    'username' => 'These credentials do not match our records.',
+                    'username' => 'รัหสผ่านไม่ถูกต้อง',
                 ]);
         }
     }
