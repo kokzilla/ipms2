@@ -18,6 +18,7 @@ use Jenssegers\Date\Date;
 use App\Utils\JobappUtil;
 use Knp\Snapp\Pdf;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Auth;
 
 //use PDF; //use for tcpdf//
 
@@ -56,9 +57,9 @@ class JobappsController extends Controller {
      */
     public function index() {
         Date::setLocale('th');
-
+        $user = Auth::user();
         $jobapps = Jobapp::all();
-        return view('hr.jobapps.index', compact('jobapps'));
+        return view('hr.jobapps.index', compact('jobapps','user'));
     }
 
     /**

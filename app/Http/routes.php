@@ -5,12 +5,13 @@ Route::get('/', function () {
     //return view('welcome');
 });
 
-Route::get('/portal', function () {
-    return view('portal');
+Route::get('/portal', function () {	
+    return view('portal',compact('user'));
 });
 
 Route::get('/home', function () {
-    return view('portal');
+	$user = Auth::user();
+    return view('portal',compact('user'));
 });
 
 Route::get('/hr', function () {
