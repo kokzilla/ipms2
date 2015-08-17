@@ -41,6 +41,56 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+
+
+    </head>
+
+    <body>s
+
+        <div id="wrapper">
+
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                @include('layout-navbar-header')
+                <!-- /.navbar-header -->
+
+                @section('navbar-toplink')
+                @include('layout-navbar-toplink')
+                @show
+                <!-- /.navbar-top-links -->
+
+                <!-- side bar menu -->
+                @section('sidebar-menu')
+                @include('layout-sidebar-menu')
+                @show
+                <!-- /.sidebar-collapse -->
+
+                <!-- /.navbar-static-side -->
+            </nav>
+
+            <div id="page-wrapper">
+                @if (Session::has('message'))
+                <div class="flash alert-info">
+                    <p>{{ Session::get('message') }}</p>
+                </div>  R
+                @endif
+
+                @if ($errors->any())
+                <div class='flash alert-danger'>
+                    @foreach ( $errors->all() as $error )
+                    <p>{{ $error }}</p>
+                    @endforeach
+                </div>
+                @endif
+
+                @yield('content')
+            </div>
+            <!-- /#page-wrapper -->
+
+        </div>
+        <!-- /#wrapper -->
+
         <script src="/bower_components/jquery/dist/jquery.min.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
@@ -70,56 +120,54 @@
         <!-- customer js -->
 
         <script src="/js/custom.js"></script>
-
-    </head>
-
-    <body>
-
-        <div id="wrapper">
-
-            <!-- Navigation -->
-            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-                @include('layout-navbar-header')
-                <!-- /.navbar-header -->
-
-                @section('navbar-toplink')
-                    @include('layout-navbar-toplink')
-                @show                         
-                <!-- /.navbar-top-links -->
-
-                <!-- side bar menu -->                
-                @section('sidebar-menu')
-                    @include('layout-sidebar-menu')
-                @show
-                <!-- /.sidebar-collapse -->
-
-                <!-- /.navbar-static-side -->
-            </nav>
-
-            <div id="page-wrapper">
-                @if (Session::has('message'))       
-                <div class="flash alert-info">          
-                    <p>{{ Session::get('message') }}</p>        
-                </div>  R
-                @endif
-
-                @if ($errors->any())        
-                <div class='flash alert-danger'>            
-                    @foreach ( $errors->all() as $error )               
-                    <p>{{ $error }}</p>         
-                    @endforeach     
-                </div>  
-                @endif
-
-                @yield('content')            
-            </div>
-            <!-- /#page-wrapper -->
-
-        </div>
-        <!-- /#wrapper -->
-
-
-
+        <script scr="/js/form-validate-custom-lang.js"></script>
+        <script src="/bower_components/jQuery-Form-Validator/form-validator/jquery.form-validator.min.js"></script>
+        <script>
+            var myLanguage = {
+                errorTitle: 'Form submission failed!',
+                requiredFields: 'You have not answered all required fields',
+                badTime: 'You have not given a correct time',
+                badEmail: 'You have not given a correct e-mail address',
+                badTelephone: 'You have not given a correct phone number',
+                badSecurityAnswer: 'You have not given a correct answer to the security question',
+                badDate: 'You have not given a correct date',
+                lengthBadStart: 'กรอกตัวเลข ',
+                lengthBadEnd: ' หลัก',
+                lengthTooLongStart: 'The input value is longer than ',
+                lengthTooShortStart: 'The input value is shorter than ',
+                notConfirmed: 'Input values could not be confirmed',
+                badDomain: 'Incorrect domain value',
+                badUrl: 'The input value is not a correct URL',
+                badCustomVal: 'The input value is incorrect',
+                andSpaces: ' and spaces ',
+                badInt: 'ข้อมูลเป็นตัวเลข',
+                badSecurityNumber: 'Your social security number was incorrect',
+                badUKVatAnswer: 'Incorrect UK VAT Number',
+                badStrength: 'The password isn\'t strong enough',
+                badNumberOfSelectedOptionsStart: 'You have to choose at least ',
+                badNumberOfSelectedOptionsEnd: ' answers',
+                badAlphaNumeric: 'The input value can only contain alphanumeric characters ',
+                badAlphaNumericExtra: ' and ',
+                wrongFileSize: 'The file you are trying to upload is too large (max %s)',
+                wrongFileType: 'Only files of type %s is allowed',
+                groupCheckedRangeStart: 'Please choose between ',
+                groupCheckedTooFewStart: 'Please choose at least ',
+                groupCheckedTooManyStart: 'Please choose a maximum of ',
+                groupCheckedEnd: ' item(s)',
+                badCreditCard: 'The credit card number is not correct',
+                badCVV: 'The CVV number was not correct',
+                wrongFileDim: 'Incorrect image dimensions,',
+                imageTooTall: 'the image can not be taller than',
+                imageTooWide: 'the image can not be wider than',
+                imageTooSmall: 'the image was too small',
+                min: 'min',
+                max: 'max',
+                imageRatioNotAccepted: 'Image ratio is not accepted'
+            };
+            $.validate({
+                language: myLanguage
+            });
+        </script>
     </body>
 
 </html>

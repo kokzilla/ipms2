@@ -169,7 +169,7 @@ class JobappsController extends Controller {
 
 
         $jobapp->update($input);
-        return Redirect::route('jobapps.index')->with('message', 'บันทึกข้อมูลการสมัครเรียบร้อย');
+        return Redirect::route('hr.jobapps.index')->with('message', 'บันทึกข้อมูลการสมัครเรียบร้อย');
         //return $jobapp->file_citizen;
     }
 

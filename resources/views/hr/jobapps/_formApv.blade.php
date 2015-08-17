@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-group"> 
                     <label for="salary_apv_id">เงินเดือน</label>
-                    {!! Form::text('salary_apv_id',null, array('class' => 'form-control')) !!}
+                    {!! Form::text('salary_apv_id',null, array('class' => 'form-control','data-validation'=>'number')) !!}
                 </div>
             </div>
         </div>

@@ -19,6 +19,7 @@
             <!-- Tab panes -->
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="profile-pills">
+                    
                     @include('hr/jobapps/_formTab1')
                 </div>
                 <div class="tab-pane fade" id="option-pills">
